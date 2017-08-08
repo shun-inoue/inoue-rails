@@ -1,16 +1,9 @@
 class HeloController < ApplicationController
-    
+    layout 'helo'
   def index
-    if request.post? then
-      @title = 'Result'
-      if params['s1'] then
-        @msg = 'you selected: ' + params['s1']
-      else
-        @msg = 'not selected...'
-      end
-    else
-        @title = 'Index'
-        @msg = 'select List...'
-    end
+    @header = 'layouts sample'
+    @footer = 'copyright SYDDA-Tuyano 2016.'
+    @title = 'New Layout'
+    @msg = 'this is sample page!'
   end
 end
