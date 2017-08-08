@@ -1,5 +1,6 @@
 class HeloController < ApplicationController
     layout 'helo'
+    
   def index
     @header = 'layouts sample'
     @footer = 'copyright SYDDA-Tuyano 2016.'
