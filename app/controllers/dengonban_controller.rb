@@ -1,7 +1,6 @@
 class DengonbanController < ApplicationController
 	layout 'dengonban'
 
-
 	def initialize
 		super
 		begin
@@ -17,7 +16,6 @@ class DengonbanController < ApplicationController
 		File.write("data.txt", @dengon_data.to_json)
 	end
 
-
 	def index
 		if request.post? then
 			obj = MyData.new(msg:params['msg'], name:params['name'], 
@@ -29,9 +27,7 @@ class DengonbanController < ApplicationController
 		end
 	end
 
-
 end
-
 
 class MyData
 	attr_accessor :name
@@ -43,6 +39,5 @@ class MyData
 		self.mail = mail
 		self.msg = msg
 	end
-
 
 end
