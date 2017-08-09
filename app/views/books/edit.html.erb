@@ -1,0 +1,19 @@
+<h1>Books#edit</h1>
+<p>書籍情報編集画面</p>
+<table>
+    <%= form_for(@book, url:{controller:'books', action:'edit'}) do |f| %>
+        <tr><th>書籍名</th>
+            <td><%=f.text_field :title %></td></tr>
+        <tr><th>著者</th>
+            <td><%=f.text_field :author%></td></tr>
+        <tr><th>金額</th>
+            <td><%=f.number_field :price %></td></tr>
+        <tr><th>出版社</th>
+            <td><%=f.text_field :publisher %></td></tr>
+        <tr><th>メモ</th>
+            <td><%=f.text_field :memo %></td></tr>
+        
+        <td><%= f.submit "保存" %></td>
+    <% end %>
+</table>
+<p class="link"><a href="/books">※トップページに戻る</a></p>

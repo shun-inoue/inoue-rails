@@ -1,0 +1,21 @@
+<h1>Books#index</h1>
+<p>書籍一覧です</p>
+<table>
+    <tr>
+     <th>ID</th>
+     <th>書籍名</th>
+     <th>著者</th>
+     <th>価格</th>
+   </tr>
+      <tr>
+         <% @book.each do |obj| %>
+         <th><%= obj.id %></th>
+         <th><a href="/books/<%= obj.id %>"><%= obj.title %></th>
+         <th><%= obj.author %></th>
+         <th><%= obj.price %></th>
+         <td><a href="/books/edit/<%= obj.id %>">編集</a></td>
+      </tr>
+   <% end %>
+</table>
+<a href = "/books/add">データ入力</a>
+ 
