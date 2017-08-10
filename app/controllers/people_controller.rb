@@ -43,7 +43,10 @@ def find
 	@msg = 'please type search word...'
 	@people = Array.new
 	if request.post? then
-		@people = Person.where name: params[:find]
+		f = params[:find].split(',')
+		@people = Person.where('name like ?', 
+			'%' + params[:find] + '%').order 'age desc'
+		
 	end
 end
 
