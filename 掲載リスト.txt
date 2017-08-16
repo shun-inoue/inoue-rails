@@ -1320,7 +1320,7 @@ def find
 	if request.post? then
 		f = params[:find].split(',')
 		@people = Person.all.limit(f[0]).offset(f[1])
-	else
+判断	else
 		@people = Person.all
 	end
 end
